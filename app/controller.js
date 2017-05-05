@@ -11,10 +11,10 @@
     .module('waypointApp')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['LocalStorage', 'QueryService'];
+  MainController.$inject = ['LocalStorage', 'QueryService', 'NgMap'];
 
 
-  function MainController(LocalStorage, QueryService) {
+  function MainController(LocalStorage, QueryService, NgMap) {
 
     // 'controller as' syntax
     var self = this;
@@ -33,5 +33,10 @@
     //   });
   }
 
+  NgMap.getMap().then(function(map) {
+    console.log(map.getCenter());
+    console.log('markers', map.markers);
+    console.log('shapes', map.shapes);
+  });
 
 })();

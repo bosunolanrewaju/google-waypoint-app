@@ -17,7 +17,8 @@
    */
   angular
     .module('waypointApp', [
-      'ngRoute'
+      'ngRoute',
+      'ngMap'
     ])
     .config(config);
 
